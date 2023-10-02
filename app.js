@@ -2,7 +2,7 @@ const { json } = require('express');
 const express = require('express');
 
 const app=express();
-const blogStat = require("./blog-stat/blog-stat");
+const blogStat = require("./blog-stats/blog-stats");
 const blogSearch = require("./blog-search/blog-search");
 app.use(json())
 
@@ -12,7 +12,7 @@ app.get('/home',(req,res)=>{
 
 
 
-app.use('/api/blog-stat',blogStat);
+app.use('/api/blog-stats',blogStat);
 app.use('/api/blog-search',blogSearch);
 
 app.listen(8000,()=>{
